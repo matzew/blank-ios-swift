@@ -51,22 +51,23 @@ If you wish to contribute to this template, the following information may be hel
 
 In ```blank-ios-app/ViewController.m``` the synchronization loop is started.
 ```
-  override func viewDidLoad() {
+override func viewDidLoad() {
     super.viewDidLoad()
-    let successCallback:(AnyObject!) -> Void = {response in // [1]
-      print("initialized OK")
-      self.statusLabel.text = "FH init successful"
+    
+    // FH.init using Swift FH sdk
+    // trailing closure Swift syntax
+    FH.init { (resp:Response, error: NSError?) -> Void in
+        if let error = error {
+            self.statusLabel.text = "FH init in error"
+            print("Error: \(error)")
+        }
+        self.statusLabel.text = "FH init successful"
+        print("Response: \(resp.parsedResponse)")
     }
-    let errorCallback: (AnyObject!) -> Void = {response in  // [2]
-      if let response = response as? FHResponse {
-        print("FH init failed. Error = \(response.rawResponseAsString)")
-        self.statusLabel.text = "FH init in error"
-      }
-    }
-    FH.initWithSuccess(successCallback, andFailure: errorCallback)
-  }
+
+}
+
 ```
-Initialize FH with success [1] and failure [2] callbacks.
 
 ### iOS9 and non TLS1.2 backend
 
