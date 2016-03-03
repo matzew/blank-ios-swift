@@ -29,6 +29,7 @@ class ViewController: UIViewController {
             if let error = error {
                 self.statusLabel.text = "FH init in error"
                 print("Error: \(error)")
+                return
             }
             self.statusLabel.text = "FH init successful"
             print("Response: \(resp.parsedResponse)")
