@@ -3,10 +3,10 @@
 > Objective-C version of Blank iOS app is available [here](https://github.com/feedhenry-templates/blank-ios-app/).
 > ObjC/Cocoapods of  Blank iOS app is available [here](https://github.com/feedhenry-templates/blank-ios-app/tree/cocoapods).
 
-Author: Corinne Krych   
+Author: Corinne Krych, Daniel Passos   
 Level: Intermediate  
-Technologies: Objective-C, iOS, RHMAP, CocoaPods.
-Summary: A demonstration of how to get started with RHMAP. 
+Technologies: Swift, iOS, RHMAP, CocoaPods.
+Summary: A demonstration of how to get started with RHMAP.
 Community Project : [Feed Henry](http://feedhenry.org)
 Target Product: RHMAP  
 Product Versions: RHMAP 3.7.0+   
@@ -71,15 +71,13 @@ override func viewDidLoad() {
 
 ### iOS9 and non TLS1.2 backend
 
-If your RHMAP is depoyed without TLS1.2 support, open as source  ```blank-ios-app/blank-ios-app-Info.plist.plist``` uncomment the exception lines:
+If your RHMAP is depoyed without TLS1.2 support, open as source  ```blank-ios-app/blank-ios-app-Info.plist.plist``` make sure the following line are uncommented:
 
 ```
-  <!--
   <key>NSAppTransportSecurity</key>
   <dict>
     <key>NSAllowsArbitraryLoads</key>
     <true/>
   </dict>
-   -->
 ```
 
