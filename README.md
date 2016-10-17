@@ -25,30 +25,30 @@ If you do not have access to a RHMAP instance, you can sign up for a free instan
 This application and its cloud services are available as a project template in RHMAP as part of the "Native iOS Blank Project" template.
 
 ### Local Clone (ideal for Open Source Development)
+
 If you wish to contribute to this template, the following information may be helpful; otherwise, RHMAP and its build facilities are the preferred solution.
 
 ## Build instructions
 
 1. Clone this project
+1. Populate ```blank-ios-app/fhconfig.plist``` with your values as explained [here](http://docs.feedhenry.com/v3/dev_tools/sdks/ios.html#ios-configure).
+1. Run ```Pod install```
+1. Open blank-ios-app.xcworkspace
+1. Run the project
 
-2. Populate ```blank-ios-app/fhconfig.plist``` with your values as explained [here](http://docs.feedhenry.com/v3/dev_tools/sdks/ios.html#ios-configure).
-
-3. Run ```Pod install```
 > NOTE: If you clone it manually to make the app buildable in RHMAP Build farm, replace the templating ```%id%``` in ```blank-ios-app\blank-ios-app-Info.plist``` in the following block:
+
 ```xml
 <key>CFBundleIdentifier</key>
 <string>%id%</string>
 ```
 
-3. Open blank-ios-app.xcworkspace
-
-4. Run the project
- 
 ## How does it work?
 
 ### FH init
 
 In ```blank-ios-app/ViewController.m``` the synchronization loop is started.
+
 ```
 override func viewDidLoad() {
     super.viewDidLoad()
